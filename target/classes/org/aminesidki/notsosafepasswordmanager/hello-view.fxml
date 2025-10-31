@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="500" prefHeight="500" alignment="TOP_CENTER" style="-fx-background-color: rgba(255,255,255,0)" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.aminesidki.notsosafepasswordmanager.controller.HelloController" stylesheets="@style.css">
+    <VBox>
+        <padding>
+            <Insets top="20" />
+        </padding>
+        <HBox alignment="TOP_CENTER" spacing="20" stylesheets="@style.css" styleClass="mono">
+            <Button onAction="#newPwd" text="New Pwd" styleClass="mono,input" />
+        </HBox>
+    </VBox>
+    <ScrollPane hbarPolicy="NEVER" prefWidth="490.0" style="-fx-background-color: transparent">
+        <VBox fx:id="container" alignment="CENTER" minWidth="470" spacing="10" style="-fx-background-color: white" stylesheets="@style.css" styleClass="mono">
+            <padding>
+                <Insets top="20" />
+            </padding>
+        </VBox>
+    </ScrollPane>
+</VBox>

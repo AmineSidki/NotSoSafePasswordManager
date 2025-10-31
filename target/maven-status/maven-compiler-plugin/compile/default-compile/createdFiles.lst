@@ -1,0 +1,6 @@
+org/aminesidki/notsosafepasswordmanager/controller/NewPasswordPopupController.class
+org/aminesidki/notsosafepasswordmanager/HelloApplication.class
+module-info.class
+org/aminesidki/notsosafepasswordmanager/util/GeneralUtils.class
+org/aminesidki/notsosafepasswordmanager/util/DatabaseUtils.class
+org/aminesidki/notsosafepasswordmanager/controller/HelloController.class
