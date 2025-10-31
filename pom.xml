@@ -6,7 +6,7 @@
 
     <groupId>org.AmineSidki</groupId>
     <artifactId>NotSoSafePasswordManager</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>NotSoSafePasswordManager</name>
 
     <properties>
@@ -15,7 +15,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
+	<dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.50.3.0</version>
@@ -36,6 +36,26 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>org.aminesidki.notsosafepasswordmanager.HelloApplication</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
@@ -53,7 +73,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.aminesidki.notsosafepasswordmanager/org.aminesidki.notsosafepasswordmanager.HelloApplication
+                                org.aminesidki.notsosafepasswordmanager.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
